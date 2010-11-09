@@ -4,7 +4,7 @@ using UserCreation.ViewModels;
 namespace UserCreation.Controllers
 {
     [HandleError]
-    public class AddNewEmployeeController : Controller
+    public class Employee : Controller
     {
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Add()
