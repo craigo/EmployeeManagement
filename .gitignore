@@ -4,4 +4,4 @@ obj/
 *.suo
 _ReSharper.*/
 *TeamCity*
-*/**/*.user
+*.user
