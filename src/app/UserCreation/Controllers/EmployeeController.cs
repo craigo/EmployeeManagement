@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using UserCreation.Actions;
 using UserCreation.ViewModels;
 
 namespace UserCreation.Controllers
@@ -14,7 +15,13 @@ namespace UserCreation.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult AddNew(NewEmployee newEmployee)
         {
-            return Redirect("EmployeeAdded");
+            new AddEmployeeCommand().Execute(newEmployee);
+            return RedirectToAction("Created", newEmployee);
+        }
+
+        public ActionResult Created(NewEmployee newEmployee)
+        {
+            return View(newEmployee);
         }
     }
 }

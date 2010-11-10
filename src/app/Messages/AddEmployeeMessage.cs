@@ -1,5 +1,8 @@
+using System;
+
 namespace Messages
 {
+    [Serializable]
     public class AddEmployeeMessage : IEmployeeMessage
     {
         public int MessageId { get;set;}

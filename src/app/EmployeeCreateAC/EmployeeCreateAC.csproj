@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2596B1C9-4110-4C33-BBEA-42116B063214}</ProjectGuid>
+    <ProjectGuid>{C1B71EFE-ECD8-4866-8E83-8449177FEA9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Messages</RootNamespace>
-    <AssemblyName>Messages</AssemblyName>
+    <RootNamespace>EmployeeCreateAC</RootNamespace>
+    <AssemblyName>EmployeeCreateAC</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\lib\NServiceBus\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="NServiceBus">
       <HintPath>..\..\..\lib\NServiceBus\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\..\..\lib\NServiceBus\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Host">
+      <HintPath>..\..\..\lib\NServiceBus\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,10 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeeMessage.cs" />
-    <Compile Include="CreatedBus.cs" />
-    <Compile Include="IEmployeeMessage.cs" />
+    <Compile Include="Endpoint.cs" />
+    <Compile Include="HandleEmployeeCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Messages\Messages.csproj">
+      <Project>{2596B1C9-4110-4C33-BBEA-42116B063214}</Project>
+      <Name>Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

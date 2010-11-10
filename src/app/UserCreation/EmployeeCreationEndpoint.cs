@@ -1,3 +1,4 @@
+using Messages;
 using NServiceBus;
 using NServiceBus.ObjectBuilder;
 using NServiceBus.Unicast.Transport.Msmq;

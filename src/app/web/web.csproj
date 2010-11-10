@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\NServiceBus\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\MVCContrib\MvcContrib.dll</HintPath>
@@ -40,6 +44,8 @@
     <Reference Include="MvcContrib.FluentHtml">
       <HintPath>..\..\..\lib\MVCContrib\MvcContrib.FluentHtml.dll</HintPath>
     </Reference>
+    <Reference Include="NServiceBus, Version=2.0.0.1145, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL" />
+    <Reference Include="NServiceBus.Core, Version=2.0.0.1145, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -80,6 +86,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Employee\Add.aspx" />
+    <Content Include="Views\Employee\Created.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -115,6 +122,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Messages\Messages.csproj">
+      <Project>{2596B1C9-4110-4C33-BBEA-42116B063214}</Project>
+      <Name>Messages</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserCreation\EmployeeCreation.csproj">
       <Project>{519C09D3-E488-434A-B949-45E6A6AFAE27}</Project>
       <Name>EmployeeCreation</Name>

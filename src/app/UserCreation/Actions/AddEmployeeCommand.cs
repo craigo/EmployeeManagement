@@ -15,7 +15,7 @@ namespace UserCreation.Actions
                                   MessageId = new Random(0).Next()
                               };
 
-            CreatedBus.Bus.Publish(message);
+            CreatedBus.Bus.Send(message);
         }
     }
 }
