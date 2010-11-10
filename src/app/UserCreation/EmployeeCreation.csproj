@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Actions\AddEmployeeCommand.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\EmployeeAdded.cs" />
     <Compile Include="EmployeeCreationEndpoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NewEmployee.cs" />

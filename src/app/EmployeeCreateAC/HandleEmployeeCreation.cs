@@ -7,7 +7,7 @@ namespace EmployeeCreateAC
     {
         public void Handle(AddEmployeeMessage message)
         {
-            System.Console.WriteLine("received add employee message.");
+            var possibleEmployee = new PossibleEmployee{FirstName = message.FirstName, LastName = message.LastName};
         }
     }
 }
