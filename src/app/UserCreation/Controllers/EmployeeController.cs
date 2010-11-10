@@ -4,16 +4,15 @@ using UserCreation.ViewModels;
 namespace UserCreation.Controllers
 {
     [HandleError]
-    public class Employee : Controller
+    public class EmployeeController : Controller
     {
-        [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Add()
         {
-            return View();
+            return View(new NewEmployee());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Add(NewEmployee newEmployee)
+        public ActionResult AddNew(NewEmployee newEmployee)
         {
             return Redirect("EmployeeAdded");
         }
