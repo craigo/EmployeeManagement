@@ -1,17 +1,21 @@
-using NServiceBus;
+using System;
+using Messages;
+using UserCreation.ViewModels;
 
 namespace UserCreation.Actions
 {
-    public interface IPublishAMessage
+    public class AddEmployeeCommand
     {
-        void Execute(IMessage messageToPublish);
-    }
-
-    public class AddEmployeeAMessage : IPublishAMessage
-    {
-        public void Execute(IMessage messageToPublish)
+        public void Execute(NewEmployee newEmployee)
         {
-            CreatedBus.Bus.Publish(messageToPublish);
+            var message = new AddEmployeeMessage
+                              {
+                                  FirstName = newEmployee.FirstName,
+                                  LastName = newEmployee.LastName,
+                                  MessageId = new Random(0).Next()
+                              };
+
+            CreatedBus.Bus.Publish(message);
         }
     }
 }
