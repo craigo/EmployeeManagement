@@ -1,4 +1,3 @@
-using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using FluentNHibernate.Cfg;
@@ -38,6 +37,8 @@ namespace EmployeeCreateAC
                 .BuildConfiguration();
             SessionFactory = configuration
                 .BuildSessionFactory();
+
+            IOC.GetImplementationOf<ISessionFactoryRegistration>().Register(SessionFactory);
         }
     }
 
@@ -53,12 +54,15 @@ namespace EmployeeCreateAC
         private static void RegisterIn(WindsorContainer container)
         {
             container.Register(Component.For<IPossibleEmployeeRepository>().ImplementedBy<PossibleEmployeeRepository>());
+            container.Register(Component.For<ISessionFactoryRegistration>().ImplementedBy<SessionFactoryRegistration>());
+            container.Register(Component.For<IUnitOfWorkScope>().ImplementedBy<NHibernateUnitOfWorkScope>());
         }
 
         public static void Configure(WindsorContainer container)
         {
             Container = container;
             RegisterIn(Container);
+            IOC.Register(Container);
         }
     }
 }

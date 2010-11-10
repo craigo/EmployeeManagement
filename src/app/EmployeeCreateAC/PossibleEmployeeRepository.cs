@@ -9,7 +9,17 @@ namespace EmployeeCreateAC
 
     public class PossibleEmployeeRepository : IPossibleEmployeeRepository
     {
-        private ISession Session { get; set; }
+        private readonly ISessionFactoryRegistration sessionFactoryRegistration;
+
+        public PossibleEmployeeRepository(ISessionFactoryRegistration sessionFactoryRegistration)
+        {
+            this.sessionFactoryRegistration = sessionFactoryRegistration;
+        }
+
+        private ISession Session
+        {
+            get { return sessionFactoryRegistration.SessionFactory().GetCurrentSession(); }
+        }
 
         public void Save(PossibleEmployee possibleEmployee)
         {

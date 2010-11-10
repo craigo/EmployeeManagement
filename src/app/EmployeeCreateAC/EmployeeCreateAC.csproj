@@ -84,10 +84,12 @@
     <Compile Include="EmployeeCreateStartUp.cs" />
     <Compile Include="Endpoint.cs" />
     <Compile Include="HandleEmployeeCreation.cs" />
+    <Compile Include="IOC.cs" />
     <Compile Include="Mappings\PossibleEmployeeMap.cs" />
     <Compile Include="PossibleEmployee.cs" />
     <Compile Include="PossibleEmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Messages\Messages.csproj">
