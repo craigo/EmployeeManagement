@@ -12,8 +12,8 @@ namespace UserCreation.Repositories
 
         public IEnumerable<PendingEmployeeDisplay> GetAllForDisplay()
         {
-            var list = Session.CreateSQLQuery("select FirstName, LastName from PossibleEmployee").List();
-            return from object[] item in list select new PendingEmployeeDisplay{FirstName = (string)item[0], LastName = (string) item[1]};
+            var list = Session.CreateSQLQuery("select Id, FirstName, LastName from PossibleEmployee").List();
+            return from object[] item in list select new PendingEmployeeDisplay{Id = (int) item[0], FirstName = (string)item[1], LastName = (string) item[2]};
         }
     }
 }

@@ -5,7 +5,7 @@ using UserCreation.ViewModels;
 namespace UserCreation.Controllers
 {
     [HandleError]
-    public class EmployeeController : Controller
+    public partial class EmployeeController : Controller
     {
         private readonly ICommandBuilder commandBuilder;
 
@@ -14,27 +14,32 @@ namespace UserCreation.Controllers
             commandBuilder = new CommandBuilder();
         }
 
-        public ActionResult Add()
+        public virtual ActionResult Add()
         {
             return View(new NewEmployee());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult AddNew(NewEmployee newEmployee)
+        public virtual ActionResult AddNew(NewEmployee newEmployee)
         {
             commandBuilder.BuildCommand<AddEmployeeCommand>().Execute(newEmployee);
             return RedirectToAction("Created", newEmployee);
         }
 
-        public ActionResult Created(NewEmployee newEmployee)
+        public virtual ActionResult Created(NewEmployee newEmployee)
         {
             return View(newEmployee);
         }
 
-        public ActionResult AllPending()
+        public virtual ActionResult AllPending()
         {
             var pendingEmployees = commandBuilder.BuildCommand<GetAllPendingEmployees>().Execute();
             return View(pendingEmployees);
+        }
+
+        public virtual ActionResult SignOn(int newEmployeeId)
+        {
+            return View();
         }
     }
 }

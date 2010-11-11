@@ -92,6 +92,7 @@
     <Content Include="Views\Employee\Add.aspx" />
     <Content Include="Views\Employee\AllPending.aspx" />
     <Content Include="Views\Employee\Created.aspx" />
+    <Content Include="Views\Employee\SignOn.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -139,6 +140,9 @@
       <Project>{519C09D3-E488-434A-B949-45E6A6AFAE27}</Project>
       <Name>EmployeeCreation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
