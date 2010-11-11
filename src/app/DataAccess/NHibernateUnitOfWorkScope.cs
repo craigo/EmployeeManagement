@@ -1,64 +1,9 @@
-using System;
+﻿using System;
 using NHibernate;
 using NHibernate.Context;
 
-namespace EmployeeCreateAC
+namespace EmployeeCreateAC.DataAccess
 {
-    public static class UnitOfWork
-    {
-        public static IUnitOfWorkScope Start()
-        {
-            return GetCurrentScope();
-        }
-
-        private static IUnitOfWorkScope GetCurrentScope()
-        {
-            try
-            {
-                return new NHibernateUnitOfWorkScope(IOC.GetImplementationOf<ISessionFactoryRegistration>().SessionFactory());
-            }
-            catch (InvalidOperationException e)
-            {
-                return new NullUnitOfWorkScope();
-            }
-        }
-    }
-
-    public interface ISessionFactoryRegistration
-    {
-        void Register(ISessionFactory sessionFactory);
-        ISessionFactory SessionFactory();
-    }
-
-    public class SessionFactoryRegistration : ISessionFactoryRegistration
-    {
-        private ISessionFactory sessionFactory;
-
-        public void Register(ISessionFactory sessionFactory)
-        {
-            this.sessionFactory= sessionFactory;
-        }
-
-        public ISessionFactory SessionFactory()
-        {
-            return sessionFactory;
-        }
-
-        public ISession CurrentSession()
-        {
-            var session = SessionFactory().GetCurrentSession();
-            
-            if (!session.Transaction.IsActive) session.BeginTransaction();
-            return session;
-        }
-    }
-
-    public interface IUnitOfWorkScope : IDisposable
-    {
-        void Complete();
-        void Rollback();
-    }
-
     public class NHibernateUnitOfWorkScope : IUnitOfWorkScope
     {
         private readonly bool ownsSession;
@@ -128,21 +73,6 @@ namespace EmployeeCreateAC
             {
                 tx.Rollback();
             }
-        }
-    }
-
-    public class NullUnitOfWorkScope : IUnitOfWorkScope
-    {
-        public void Dispose()
-        {
-        }
-
-        public void Complete()
-        {
-        }
-
-        public void Rollback()
-        {
         }
     }
 }

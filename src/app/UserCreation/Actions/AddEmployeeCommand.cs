@@ -4,9 +4,11 @@ using UserCreation.ViewModels;
 
 namespace UserCreation.Actions
 {
-    public class AddEmployeeCommand
+    public interface ICommand{}
+
+    public class AddEmployeeCommand : ICommand
     {
-        public void Execute(NewEmployee newEmployee)
+        public virtual void Execute(NewEmployee newEmployee)
         {
             var message = new AddEmployeeMessage
                               {

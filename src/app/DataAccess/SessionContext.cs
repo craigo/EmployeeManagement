@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using System.Collections;
 using NHibernate.Context;
 using NHibernate.Engine;
 
-namespace EmployeeCreateAC
+namespace EmployeeCreateAC.DataAccess
 {
-    public class EmployeeCreateACSessionContext : MapBasedSessionContext
+    public class SessionContext : MapBasedSessionContext
     {
         [ThreadStatic] private static IDictionary map;
 
-        public EmployeeCreateACSessionContext(ISessionFactoryImplementor factory) : base(factory)
+        public SessionContext(ISessionFactoryImplementor factory) : base(factory)
         {}
 
         protected override IDictionary GetMap()

@@ -7,6 +7,13 @@ namespace UserCreation.Controllers
     [HandleError]
     public class EmployeeController : Controller
     {
+        private readonly ICommandBuilder commandBuilder;
+
+        public EmployeeController()
+        {
+            commandBuilder = new CommandBuilder();
+        }
+
         public ActionResult Add()
         {
             return View(new NewEmployee());
@@ -15,13 +22,19 @@ namespace UserCreation.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult AddNew(NewEmployee newEmployee)
         {
-            new AddEmployeeCommand().Execute(newEmployee);
+            commandBuilder.BuildCommand<AddEmployeeCommand>().Execute(newEmployee);
             return RedirectToAction("Created", newEmployee);
         }
 
         public ActionResult Created(NewEmployee newEmployee)
         {
             return View(newEmployee);
+        }
+
+        public ActionResult AllPending()
+        {
+            var pendingEmployees = commandBuilder.BuildCommand<GetAllPendingEmployees>().Execute();
+            return View(pendingEmployees);
         }
     }
 }

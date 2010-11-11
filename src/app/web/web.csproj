@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=1.1.0.685, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\NServiceBus\log4net.dll</HintPath>
@@ -44,6 +45,7 @@
     <Reference Include="MvcContrib.FluentHtml">
       <HintPath>..\..\..\lib\MVCContrib\MvcContrib.FluentHtml.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
     <Reference Include="NServiceBus, Version=2.0.0.1145, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL" />
     <Reference Include="NServiceBus.Core, Version=2.0.0.1145, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -82,10 +84,13 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup\StartupNHibernate.cs" />
+    <Compile Include="Startup\StartupNServiceBus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Employee\Add.aspx" />
+    <Content Include="Views\Employee\AllPending.aspx" />
     <Content Include="Views\Employee\Created.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -122,6 +127,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{577F5ED7-7049-4028-975C-30E0E72A0A11}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Messages\Messages.csproj">
       <Project>{2596B1C9-4110-4C33-BBEA-42116B063214}</Project>
       <Name>Messages</Name>
