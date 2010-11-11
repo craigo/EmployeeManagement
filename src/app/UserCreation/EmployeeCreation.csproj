@@ -77,6 +77,7 @@
     <Compile Include="Actions\CommandBuilder.cs" />
     <Compile Include="Actions\GetAllPendingEmployees.cs" />
     <Compile Include="Actions\ICommandBuilder.cs" />
+    <Compile Include="Actions\SignOnEmployee.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

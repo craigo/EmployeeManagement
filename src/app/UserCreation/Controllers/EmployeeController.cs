@@ -39,6 +39,7 @@ namespace UserCreation.Controllers
 
         public virtual ActionResult SignOn(int newEmployeeId)
         {
+            commandBuilder.BuildCommand<SignOnEmployee>().Execute(newEmployeeId);
             return View();
         }
     }

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AddEmployeeMessage.cs" />
     <Compile Include="CreatedBus.cs" />
+    <Compile Include="CreateSignedOnEmployee.cs" />
     <Compile Include="IEmployeeMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
