@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeCreateAC", "src\app
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "src\app\DataAccess\DataAccess.csproj", "{577F5ED7-7049-4028-975C-30E0E72A0A11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddNewArcEmployeeAC", "src\app\AddNewArcEmployeeAC\AddNewArcEmployeeAC.csproj", "{F519232F-D927-4B7B-AA18-E2B7436A5FD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{577F5ED7-7049-4028-975C-30E0E72A0A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577F5ED7-7049-4028-975C-30E0E72A0A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577F5ED7-7049-4028-975C-30E0E72A0A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F519232F-D927-4B7B-AA18-E2B7436A5FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F519232F-D927-4B7B-AA18-E2B7436A5FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F519232F-D927-4B7B-AA18-E2B7436A5FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F519232F-D927-4B7B-AA18-E2B7436A5FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
