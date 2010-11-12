@@ -14,9 +14,7 @@ namespace AddNewArcEmployeeAC
 
         public void Handle(CreateSignedOnEmployee message)
         {
-            // send message to add new employee
-
-            // add employee to employee table
+            Bus.Publish(new CreateEmployee{EmployeeId = 123, FirstName = message.FirstName, LastName = message.LastName});
         }
 
         public void Handle(EmployeeCreatedByIt message)

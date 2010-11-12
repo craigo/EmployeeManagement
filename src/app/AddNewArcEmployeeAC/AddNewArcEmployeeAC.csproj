@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEmployee.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Endpoint.cs" />
     <Compile Include="InitiateAccountCreations.cs" />
