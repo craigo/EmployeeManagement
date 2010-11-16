@@ -93,6 +93,7 @@
     <Content Include="Views\Employee\AllPending.aspx" />
     <Content Include="Views\Employee\Created.aspx" />
     <Content Include="Views\Employee\SignOn.aspx" />
+    <Content Include="Views\Payroll\BankInformation.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

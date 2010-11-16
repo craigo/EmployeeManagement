@@ -16,17 +16,17 @@ namespace UserCreation.Controllers
 
         public virtual ActionResult Add()
         {
-            return View(new NewEmployee());
+            return View(new NewEmployeeViewModel());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public virtual ActionResult AddNew(NewEmployee newEmployee)
+        public virtual ActionResult AddNew(NewEmployeeViewModel newEmployee)
         {
             commandBuilder.BuildCommand<AddEmployeeCommand>().Execute(newEmployee);
             return RedirectToAction("Created", newEmployee);
         }
 
-        public virtual ActionResult Created(NewEmployee newEmployee)
+        public virtual ActionResult Created(NewEmployeeViewModel newEmployee)
         {
             return View(newEmployee);
         }

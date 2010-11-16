@@ -83,13 +83,13 @@ namespace UserCreation.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult AddNew(UserCreation.ViewModels.NewEmployee newEmployee) {
+        public override System.Web.Mvc.ActionResult AddNew(UserCreation.ViewModels.NewEmployeeViewModel newEmployee) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AddNew);
             callInfo.RouteValueDictionary.Add("newEmployee", newEmployee);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Created(UserCreation.ViewModels.NewEmployee newEmployee) {
+        public override System.Web.Mvc.ActionResult Created(UserCreation.ViewModels.NewEmployeeViewModel newEmployee) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Created);
             callInfo.RouteValueDictionary.Add("newEmployee", newEmployee);
             return callInfo;

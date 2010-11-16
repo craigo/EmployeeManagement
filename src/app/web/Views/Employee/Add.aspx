@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master"  Inherits="System.Web.Mvc.ViewPage<UserCreation.ViewModels.NewEmployee>"%>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master"  Inherits="System.Web.Mvc.ViewPage<UserCreation.ViewModels.NewEmployeeViewModel>"%>
 <%@ Import Namespace="MvcContrib.FluentHtml" %>
 <%@ Import Namespace="MvcContrib" %>
 

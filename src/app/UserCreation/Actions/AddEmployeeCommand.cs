@@ -8,7 +8,7 @@ namespace UserCreation.Actions
 
     public class AddEmployeeCommand : ICommand
     {
-        public virtual void Execute(NewEmployee newEmployee)
+        public virtual void Execute(NewEmployeeViewModel newEmployee)
         {
             var message = new AddEmployeeMessage
                               {

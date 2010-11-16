@@ -2,7 +2,7 @@
 
 namespace UserCreation.ViewModels
 {
-    public class NewEmployee
+    public class NewEmployeeViewModel
     {
         [DisplayName("First Name:")]
         public string FirstName { get; set; }

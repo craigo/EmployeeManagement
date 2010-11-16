@@ -23,6 +23,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC {
     public static UserCreation.Controllers.EmployeeController Employee = new UserCreation.Controllers.T4MVC_EmployeeController();
+    public static UserCreation.Controllers.PayrollController Payroll = new UserCreation.Controllers.T4MVC_PayrollController();
 }
 
 namespace T4MVC {
@@ -244,6 +245,16 @@ public class T4MVC_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResul
     }
      
     public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+public class T4MVC_PartialViewResult : System.Web.Mvc.PartialViewResult, IT4MVCActionResult {
+    public T4MVC_PartialViewResult(string area, string controller, string action): base()  {
+        this.InitMVCT4Result(area, controller, action);
+    }
     
     public string Controller { get; set; }
     public string Action { get; set; }
